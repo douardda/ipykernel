@@ -1,0 +1,48 @@
+Source: ipykernel
+Maintainer: Julien Puydt <julien.puydt@laposte.net>
+Section: python
+Priority: optional
+Standards-Version: 3.9.6
+Homepage: https://github.com/ipython/ipykernel
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               python,
+               python-ipython,
+               python-jupyter-client,
+               python-mock,
+               python-nose,
+               python-path,
+               python-pickleshare,
+               python-setuptools,
+               python-traitlets,
+               python3-all,
+               python3-ipython,
+               python3-jupyter-client,
+               python3-mock,
+               python3-nose,
+               python3-path,
+               python3-pickleshare,
+               python3-setuptools,
+               python3-traitlets
+X-Python-Version: >= 2.7
+X-Python3-Version: >= 3.2
+Vcs-Git: git://anonscm.debian.org/python-modules/packages/ipykernel.git
+Vcs-Browser: http://anonscm.debian.org/cgit/python-modules/packages/ipykernel.git
+
+Package: python-ipykernel
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: IPython kernel for Jupyter (Python 2)
+ This software component provides an IPython kernel, which will hook
+ itself into Jupyter.
+ .
+ This package installs the library for Python 2.
+
+Package: python3-ipykernel
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: IPython kernel for Jupyter (Python 3)
+ This software component provides an IPython kernel, which will hook
+ itself into Jupyter.
+ .
+ This package installs the library for Python 3.

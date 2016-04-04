@@ -1,0 +1,11 @@
+# see git-dpm(1) from git-dpm package
+9f3dea567a54974df6186dd31173aeb41b4d1057
+9f3dea567a54974df6186dd31173aeb41b4d1057
+a505d800a11f430e7898abf32cc25ae84b0771b3
+a505d800a11f430e7898abf32cc25ae84b0771b3
+ipykernel_4.1.0.orig.tar.gz
+056dbb73d873376a412a9526a282d857dd908552
+80372
+debianTag="debian/%e%v"
+patchedTag="patched/%e%v"
+upstreamTag="upstream/%e%u"

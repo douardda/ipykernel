@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+export PYBUILD_NAME=ipykernel
+export PYBUILD_TEST_ARGS=-v
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -r `find debian/python-ipykernel -name tests -type d`
+	rm -r `find debian/python-ipykernel -name resources -type d`
+	rm -r `find debian/python3-ipykernel -name tests -type d`
+	rm -r `find debian/python3-ipykernel -name resources -type d`

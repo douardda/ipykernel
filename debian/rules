@@ -6,9 +6,19 @@ export PYBUILD_TEST_ARGS=-v
 %:
 	dh $@ --with python2,python3 --buildsystem=pybuild
 
+override_dh_auto_test:
+	echo "Not time for tests now!"
+
 override_dh_auto_install:
 	dh_auto_install
 	rm -r `find debian/python-ipykernel -name tests -type d`
 	rm -r `find debian/python-ipykernel -name resources -type d`
 	rm -r `find debian/python3-ipykernel -name tests -type d`
 	rm -r `find debian/python3-ipykernel -name resources -type d`
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
+	PYTHONPATH=. sphinx-build -b html docs debian/python-ipykernel-doc/usr/share/doc/python-ipykernel-doc/html
+	dh_sphinxdoc -O--buildsystem=pybuild
+endif
+
